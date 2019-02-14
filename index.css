@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+main {
+    padding-top: 100px;
+  }
+  
+
+
+
+  button, input[type="text"] {
+    padding: 5px;
+  }
+
+  button{
+      display:inline-block;
+  }
+  main .row {
+    margin-bottom: 20px;
+  }
+  
+  .meal-details-box {
+    position:relative;  
+    height: 400px;
+    text-align: center;
+    margin-right:20px;
+    border:solid 1px lightgray;
+  }
+  .customer-charge-box {
+    height: 200px;
+    text-align: center;
+    
+    margin-left:20px;
+    border:solid 1px lightgray;
+  }
+
+  .earning-info-box {
+    height: 200px;
+    text-align: center;
+    margin-left:20px;
+    margin-top:30px;
+    border:solid 1px lightgray;
+  }
+  
+
+
+  .black {
+    background-color: black;
+    color: white;
+  }
+  
+  .green {
+    background-color: green;
+  }
+  
+  .orange {
+    background-color: orange;
+  }
+  
+  .blue {
+    background-color: blue;
+  }

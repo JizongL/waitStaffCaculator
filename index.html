@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Responsive Grid Challenge</title>
+
+  <!-- Responsive viewport tag, tells small screens that it's responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./grid.css" />
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+
+  <navbar>Waitstaff Caculator</navbar>  
+
+  <main role="main">
+    <div class="row">
+      <div class="col-6 input-area-display-column">
+        <div class="meal-details-box">
+            <div class = "box box-top orange">
+                    <h2>meal-details</h2>
+                   
+
+            </div>
+            <div class = "box box-details">
+            <form id="js-enter-meal-details-form">
+                <p>
+                    <label for="base-meal-price-entry">Base Meal Price: $</label>
+                    <input type="text" name="base-meal-price-entry" class="js-base-meal-price-entry" placeholder="9.99">
+                </p>   
+                <p>
+                    <label for="tax-rate-entry">Tax Rate: %</label>
+                    <input type="text" name="tax-rate-entry" class="js-tax-rate-entry" placeholder="0.05">
+                </p> 
+                <p>  
+                    <label for="tip-percentage">Tip percentage: %</label>
+                    <input type="text" name="tip-percentage" class="js-tip-percentage" placeholder="10">
+                </p>   
+                    <button type="submit">Submit</button>
+                    <button type="submit">Cancel</button>
+                </form>
+            </div>    
+        </div>
+      </div>
+            <!---->
+      <div class="col-6 result-display-column">
+
+        <div class="customer-charge-box">
+            <div class = "box box-top orange">
+                <h2>Customer Charges</h2>
+            </div>    
+
+            <div class = "box box-details">
+                <p>Subtotal: <span>0.00</span></p>
+                <p>Tip: <span>0.00</span></p>
+                <hr>
+                <p>total: <span>0.00</span></p>
+            </div>
+        </div>
+ <!---->
+        <div class = "earning-info-box">
+        
+                <div class = "box box-top orange">
+                    <h2>My Earnings Info</h2>
+                </div>   
+                <div class = "box box-details">
+                        <p>Tip Total: <span>0.00</span></p>
+                        <p>Meal count: <span>0.00</span></p>            
+                        <p>Average Tip Per Meal: <span>0.00</span></p>
+                    </div>
+                </div>
+
+
+        </div>
+       
+        
+
+
+
+
+      </div>
+    
+
+   
+
+  </main>
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
