@@ -3,27 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>CSS Responsive Grid Challenge</title>
-
-  <!-- Responsive viewport tag, tells small screens that it's responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <!-- Stylesheets -->
   <link rel="stylesheet" href="./grid.css" />
   <link rel="stylesheet" href="./index.css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
+
 <body>
-
   <nav class = 'navbar'>Waitstaff Caculator</nav>  
-
   <main role="main">
     <div class="row">
       <div class="col-6 input-area-display-column">
         <div class="meal-details-box">
             <div class = "box box-top">
-                    <h2>meal-details</h2>
-                   
-
+                <h2>meal-details</h2>
             </div>
             <div class = "box box-details">
             <form id="js-enter-meal-details-form">
@@ -41,19 +35,16 @@
                 </p>   
                     <button type="submit">Submit</button>
                     <button type="reset">Cancel</button>
-                </form>
+            </form>
             </div>    
         </div>
       </div>
-      
-            <!---->
+        
       <div class="col-6 result-display-column">
-
         <div class="customer-charge-box">
             <div class = "box box-top">
                 <h2>Customer Charges</h2>
             </div>    
-
             <div class = "box box-details">
                 <p>Subtotal: <span id = 'subtotal-update'>0.00</span></p>
                 <p>Tip: <span id = 'tip-update'>0.00</span></p>
@@ -61,35 +52,23 @@
                 <p>total: <span id = 'total-update'>0.00</span></p>
             </div>
         </div>
- <!---->
-        <div class = "earning-info-box">
-        
-                <div class = "box box-top">
-                    <h2>My Earnings Info</h2>
-                </div>   
-                <div class = "box box-details">
-                        <p>Tip Total: <span id= 'tip-total-update'>0.00</span></p>
-                        <p>Meal count: <span id = 'meal-count-update'>0.00</span></p>            
-                        <p>Average Tip Per Meal: <span id = 'average-tip-per-meal'>0.00</span></p>
-                    </div>
-                </div>
 
-                <button id = "reset-data" type="submit">reset</button>
+        <div class = "earning-info-box">        
+            <div class = "box box-top">
+                <h2>My Earnings Info</h2>
+            </div>   
+            <div class = "box box-details">
+                <p>Tip Total: <span id= 'tip-total-update'>0.00</span></p>
+                <p>Meal count: <span id = 'meal-count-update'>0.00</span></p>            
+                <p>Average Tip Per Meal: <span id = 'average-tip-per-meal'>0.00</span></p>
+            </div>
         </div>
-       
-        
-
-
-
-
+            <button id = "reset-data" type="submit">reset</button>
+        </div>
       </div>
-    
-
-   
-
   </main>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>
-  <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
     <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
