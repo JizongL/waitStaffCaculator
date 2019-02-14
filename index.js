@@ -4,12 +4,21 @@
 
 let DATA = [];
 
-function addEntry(events, squirrel) {
-  DATA.push({events, squirrel});
+function addEntry(newBasePrice, newTaxRate,newTipPercentage) {
+  DATA.push({id:cuid(),newBasePrice, newTaxRate,newTipPercentage});
 }
 
+function resetData(){
+    console.log('resetData ran ');
+    $('#reset-data').on('click',function(event){        
+        DATA=[];
+        renderCalculator();
+    });
+};
 
-
+function renderCalculator(){
+    console.log('testing: ',DATA);
+};
 
 
 
@@ -24,9 +33,10 @@ function handleEnterMealDetails(){
         const newTipPercentage = $('.js-tip-percentage').val();
         $('.js-tip-percentage').val('');
         console.log(newBasePrice,newTaxRate,newTipPercentage);
-        
+        addEntry(newBasePrice, newTaxRate,newTipPercentage);
+        console.log(DATA);
     });
-
+    renderCalculator();
 
     // handle meal details entry
     
@@ -46,6 +56,8 @@ function waitStaff_calculator(){
   handleEnterMealDetails();
   handleCustomerCharge();
   handleMyEarningInfo();
+  resetData();
+  renderCalculator();
 }
 
 $(waitStaff_calculator);
