@@ -36,20 +36,22 @@ function handleEnterMealDetails(){
   console.log('submit meal details to DATA');
   $('#js-enter-meal-details-form').submit(function(event){
     event.preventDefault();
-    const newBasePrice = $('.js-base-meal-price-entry').val();
+    const newBasePrice = Number($('.js-base-meal-price-entry').val());
     $('.js-base-meal-price-entry').val('');
-    const newTaxRate = $('.js-tax-rate-entry').val();
+    const newTaxRate = Number($('.js-tax-rate-entry').val());
     $('.js-tax-rate-entry').val('');
-    const newTipPercentage = $('.js-tip-percentage').val();
+    const newTipPercentage = Number($('.js-tip-percentage').val());
     $('.js-tip-percentage').val('');
+    if(!Number.isInteger( newBasePrice)||!Number.isInteger(newTaxRate) || !Number.isInteger(newTipPercentage) ){
+      alert('Please enter numbers as valid entry');
+    } else {
     // testing log
     console.log(newBasePrice,newTaxRate*0.01,newTipPercentage*0.01);
     // convert entry from string to number and add to Array.
     addEntry(Number(newBasePrice), Number(newTaxRate)*0.01,Number(newTipPercentage)*0.01);
     // testing log
     console.log(DATA);
-    handleCustomerCharge();
-  });
+    handleCustomerCharge();}});
   // log array to confirm it is working,only for testing
   logArrayItems();
     
