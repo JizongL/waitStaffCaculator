@@ -53,7 +53,12 @@ function renderCalculator(){
 
 
 function resetData(){
+    console.log('`resetData` ran');
+    $('#reset-data').on('click',function(event){
+        DATA=[];
+        renderCalculator();
 
+    });
 }
         
 
@@ -139,6 +144,7 @@ function waitStaff_calculator(){
   handleEnterMealDetails();
   handleCustomerCharge();
   handleMyEarningInfo();
+  resetData();
   renderCalculator();
 }
 
