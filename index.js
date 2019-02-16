@@ -15,37 +15,46 @@ function generateRightColumnBoxes(){
 
 function renderCalculator(){
     console.log('`renderCalculator` ran');
+    // subtotal,tip,total
+    let hccArray = handleCustomerCharge();
+    // tip total,meal count,average tip per meal
+    let hmeArray = handleMyEarningInfo();
+    console.log('testing charge',handleCustomerCharge());
+
     $('.result-display-column').html(
         `<div class="customer-charge-box">
-        <div class = "box box-top orange">
+        <div class = "box box-top">
             <h2>Customer Charges</h2>
         </div>    
 
         <div class = "box box-details">
-            <p>Subtotal: <span>0.00</span></p>
-            <p>Tip: <span>0.00</span></p>
+            <p>Subtotal: <span>${hccArray[0]}</span></p>
+            <p>Tip: <span>${hccArray[1]}</span></p>
             <hr>
-            <p>total: <span>0.00</span></p>
+            <p>total: <span>${hccArray[2]}</span></p>
         </div>
     </div>
 <!---->
     <div class = "earning-info-box">
     
-            <div class = "box box-top orange">
+            <div class = "box box-top">
                 <h2>My Earnings Info</h2>
             </div>   
             <div class = "box box-details">
-                    <p>Tip Total: <span>0.00</span></p>
-                    <p>Meal count: <span>0.00</span></p>            
-                    <p>Average Tip Per Meal: <span>0.00</span></p>
+                    <p>Tip Total: <span>${hmeArray[0]}</span></p>
+                    <p>Meal count: <span>${hmeArray[1]}</span></p>            
+                    <p>Average Tip Per Meal: <span>${hmeArray[2]}</span></p>
                 </div>
+               
             </div>
 `
     );
 }
 
 
+function resetData(){
 
+}
         
 
 function handleEnterMealDetails(){
@@ -61,8 +70,8 @@ function handleEnterMealDetails(){
         console.log('new entry',newBasePrice,newTaxRate,newTipPercentage);
         addEntry(newBasePrice,newTaxRate*0.01,newTipPercentage*0.01);
         // temp, it will be moved to renderCalculator() later.
-        handleCustomerCharge();
-        handleMyEarningInfo();
+        renderCalculator();
+        
     });
 
 
@@ -94,7 +103,7 @@ function customerChargeCalucation(){
         let total = subtotal+tip;
         return [subtotal,tip,total];
       } else{
-          return 'no calculation available';
+          return [0,0,0];
       }
 }
 
@@ -102,20 +111,26 @@ function handleCustomerCharge(){
     console.log('`handleCustomerCharge` ran');
     let resultArray = customerChargeCalucation();
     console.log(resultArray);
+    return resultArray;
     
 }
 
 function handleMyEarningInfo(){
-    console.log('`handleMyEarningInfo` ran');
-    if(DATA.length!==0){
+  // eslint-disable-next-line no-console
+  console.log('`handleMyEarningInfo` ran');
+  if(DATA.length!==0){
     let tipTotal = 0;
     for (let meal of DATA){
-        tipTotal+= meal.newBasePrice*meal.newTipPercentage;
+      tipTotal+= meal.newBasePrice*meal.newTipPercentage;
     }
     let mealCount = DATA.length;
     let averageTipPerMeal = tipTotal/mealCount;
+    // eslint-disable-next-line no-console
     console.log('testing earning info cal',tipTotal,mealCount,averageTipPerMeal);
-    }    
+    return [tipTotal,mealCount,averageTipPerMeal];
+  } else {
+    return [0,0,0];
+  }    
 
 }
 
